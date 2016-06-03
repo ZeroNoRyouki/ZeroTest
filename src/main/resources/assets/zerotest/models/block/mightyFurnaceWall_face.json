@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "zerotest:blocks/multiblock/mightyfurnace/FaceCenterEmpty",
+    "down": "zerotest:blocks/multiblock/mightyfurnace/FaceCenterEmpty",
+    "north": "zerotest:blocks/multiblock/mightyfurnace/FaceCenterFront",
+    "south": "zerotest:blocks/multiblock/mightyfurnace/FaceCenterFront",
+    "west": "zerotest:blocks/multiblock/mightyfurnace/FaceCenterFront",
+    "east": "zerotest:blocks/multiblock/mightyfurnace/FaceCenterFront"
+  }
+}

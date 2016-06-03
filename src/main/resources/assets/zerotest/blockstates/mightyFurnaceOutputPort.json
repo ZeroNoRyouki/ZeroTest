@@ -1,0 +1,34 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "side": "zerotest:blocks/multiblock/mightyfurnace/SingleBlockSimple",
+      "particle": "#side",
+      "down": "#side",
+      "up": "#side",
+      "north": "#side",
+      "south": "#side",
+      "west": "#side",
+      "east": "#side"
+    },
+    "model": "cube"
+  },
+  "variants": {
+    "assembled": {
+      "true": {"textures": {"facing": "zerotest:blocks/multiblock/mightyfurnace/FaceCenterItemOutput" }},
+      "false": {"textures": {"facing": "zerotest:blocks/multiblock/mightyfurnace/SingleBlockItemOutput" }}
+    },
+    "hfacing": {
+      "north": {"textures": {"north": "#facing" }},
+      "south": {"textures": {"south": "#facing" }},
+      "west": {"textures": {"west": "#facing" }},
+      "east": {"textures": {"east": "#facing" }}
+    },
+    "inventory": {
+      "transform": "forge:default-block",
+      "textures": {
+        "north": "zerotest:blocks/multiblock/mightyfurnace/SingleBlockItemOutput"
+      }
+    }
+  }
+}

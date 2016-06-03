@@ -1,2 +1,16 @@
 # common stuff
 itemGroup.zerotest.common.creativetab=Zero TEST
+# multiblock test
+tile.zerotest:mightyFurnaceWall.name=Mighty Furnace wall
+tile.zerotest:mightyFurnacePowerPort.name=Mighty Furnace Power port
+tile.zerotest:mightyFurnaceInputPort.name=Mighty Furnace Input port
+tile.zerotest:mightyFurnaceOutputPort.name=Mighty Furnace Output port
+zerotest:api.multiblock.validation.powerport_invalid_position=Power ports can be placed only on a side face
+zerotest:api.multiblock.validation.ioport_invalid_position=I/O ports can be placed only on a side face
+zerotest:api.multiblock.validation.powerport_already_present=There is already a power port in the machine
+zerotest:api.multiblock.validation.inputport_already_present=There is already a input port in the machine
+zerotest:api.multiblock.validation.outputport_already_present=There is already a output port in the machine
+zerotest:api.multiblock.validation.powerport_missing=You need a power port in the machine
+zerotest:api.multiblock.validation.inputport_missing=You need a input port in the machine
+zerotest:api.multiblock.validation.outputport_missing=You need a output port in the machine
+zerotest:api.multiblock.validation.invalid_block=Block at %1$d, %2$d, %3$d is not valid for the machine

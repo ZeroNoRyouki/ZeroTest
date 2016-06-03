@@ -1,0 +1,21 @@
+{
+  "textures": {
+    "side": "zerotest:blocks/multiblock/mightyfurnace/FaceSide"
+  },
+  "elements": [
+    {
+      "from": [ 0, 0, 0 ],
+      "to": [ 16, 16, 16 ],
+      "faces": {
+        "south": { "texture": "#side", "cullface": "south", "rotation": 0 },
+        "west":  { "texture": "#side", "cullface": "west", "rotation": 180 },
+
+        "north": { "texture": "#side", "cullface": "north", "rotation": 0 },
+        "east":  { "texture": "#side", "cullface": "east", "rotation": 180 },
+
+        "up":    { "texture": "#side", "cullface": "up", "rotation": 0 },
+        "down":  { "texture": "#side", "cullface": "down", "rotation": 180 }
+      }
+    }
+  ]
+}

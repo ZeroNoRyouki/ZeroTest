@@ -1,0 +1,37 @@
+{
+  "variants": {
+    "faces=none": { "model": "zerotest:mightyFurnaceWall_single" },
+    "faces=all": { "model": "zerotest:mightyFurnaceWall_single" },
+    "faces=face_d": { "model": "zerotest:mightyFurnaceWall_face" },
+    "faces=face_u": { "model": "zerotest:mightyFurnaceWall_face" },
+    "faces=face_e": { "model": "zerotest:mightyFurnaceWall_face" },
+    "faces=face_w": { "model": "zerotest:mightyFurnaceWall_face" },
+    "faces=face_s": { "model": "zerotest:mightyFurnaceWall_face" },
+    "faces=face_n": { "model": "zerotest:mightyFurnaceWall_face" },
+    "faces=angle_sw": { "model": "zerotest:mightyFurnaceWall_frame"},
+    "faces=angle_es": { "model": "zerotest:mightyFurnaceWall_frame", "y": -90},
+    "faces=angle_en": { "model": "zerotest:mightyFurnaceWall_frame", "y": 180},
+    "faces=angle_nw": { "model": "zerotest:mightyFurnaceWall_frame", "y": 90},
+    "faces=angle_su": { "model": "zerotest:mightyFurnaceWall_frame", "x": -90, "y": 90 },
+    "faces=angle_ds": { "model": "zerotest:mightyFurnaceWall_frame", "x": 90, "y": 90 },
+    "faces=angle_eu": { "model": "zerotest:mightyFurnaceWall_frame", "x": 90, "y": -180 },
+    "faces=angle_de": { "model": "zerotest:mightyFurnaceWall_frame", "x": 270, "y": -180 },
+    "faces=angle_nu": { "model": "zerotest:mightyFurnaceWall_frame", "x": -90, "y": 270 },
+    "faces=angle_dn": { "model": "zerotest:mightyFurnaceWall_frame", "x": 90, "y": 270 },
+    "faces=angle_uw": { "model": "zerotest:mightyFurnaceWall_frame", "x": -90, "y": 180 },
+    "faces=angle_dw": { "model": "zerotest:mightyFurnaceWall_frame", "x": 90, "y": 180 },
+    "faces=corner_suw": { "model": "zerotest:mightyFurnaceWall_corner" },
+    "faces=corner_dsw": { "model": "zerotest:mightyFurnaceWall_corner", "x": -90 },
+    "faces=corner_esu": { "model": "zerotest:mightyFurnaceWall_corner", "y": -90 },
+    "faces=corner_des": { "model": "zerotest:mightyFurnaceWall_corner", "x": -90, "y": -90 },
+    "faces=corner_enu": { "model": "zerotest:mightyFurnaceWall_corner", "y": -180 },
+    "faces=corner_nuw": { "model": "zerotest:mightyFurnaceWall_corner", "y": 90 },
+    "faces=corner_dnw": { "model": "zerotest:mightyFurnaceWall_corner", "x": 180 },
+    "faces=corner_den": { "model": "zerotest:mightyFurnaceWall_corner", "x": -90, "y": 180 },
+    "faces=opposite_ew": { "model": "zerotest:mightyFurnaceWall_face_on" },
+    "inventory": {
+      "transform": "forge:default-block",
+      "model": "zerotest:mightyFurnaceWall_single"
+    }
+  }
+}
