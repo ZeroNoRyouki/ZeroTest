@@ -14,3 +14,5 @@ zerotest:api.multiblock.validation.powerport_missing=You need a power port in th
 zerotest:api.multiblock.validation.inputport_missing=You need a input port in the machine
 zerotest:api.multiblock.validation.outputport_missing=You need a output port in the machine
 zerotest:api.multiblock.validation.invalid_block=Block at %1$d, %2$d, %3$d is not valid for the machine
+# connected textures test
+tile.zerotest:ornatedEmeraldBlock.name=Snapecreeper' Ornate Emerald

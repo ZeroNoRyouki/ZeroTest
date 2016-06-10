@@ -1,0 +1,15 @@
+{
+    "__comment": "Model file for three adjacent connected sides in a T shape (rotated per state, default connected on the 'up/east/west' facing)",
+	"parent": "block/cube",
+    "textures": {
+		"particle": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock0C",
+        "down": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock2C_we",
+		"up": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock4C",
+		"north": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock3C_uwe",
+		"south": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock3C_uwe",
+		"west": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock4C",
+		"east": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock4C"
+		
+		
+    }
+}

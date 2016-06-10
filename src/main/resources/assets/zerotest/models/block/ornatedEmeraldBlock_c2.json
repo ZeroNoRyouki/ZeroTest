@@ -1,0 +1,15 @@
+{
+    "__comment": "Model file for two connected sides (rotated per state, default connected on the 'up/down' facing)",
+	"parent": "block/cube",
+    "textures": {
+		"particle": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock0C",
+        "down": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock4C",
+		"up": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock4C",
+		"north": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock2C_ud",
+		"south": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock2C_ud",
+		"west": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock2C_ud",
+		"east": "zerotest:blocks/ornatedEmeraldBlock/ornatedEmeraldBlock2C_ud"
+		
+		
+    }
+}

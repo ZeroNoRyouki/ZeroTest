@@ -1,0 +1,84 @@
+{
+  "variants": {
+    "facings=none": { "model": "zerotest:ornatedEmeraldBlock_c0" },
+
+    "facings=face_u": { "model": "zerotest:ornatedEmeraldBlock_c1" },
+    "facings=face_d": { "model": "zerotest:ornatedEmeraldBlock_c1", "x": 180 },
+    "facings=face_n": { "model": "zerotest:ornatedEmeraldBlock_c1", "x": 90 },
+    "facings=face_s": { "model": "zerotest:ornatedEmeraldBlock_c1", "x": -90 },
+    "facings=face_w": { "model": "zerotest:ornatedEmeraldBlock_c1", "x": 90, "y": -90 },
+    "facings=face_e": { "model": "zerotest:ornatedEmeraldBlock_c1", "x": 90, "y": 90 },
+
+    "facings=angle_eu": { "model": "zerotest:ornatedEmeraldBlock_c2angle" },
+    "facings=angle_uw": { "model": "zerotest:ornatedEmeraldBlock_c2angle", "y": 180 },
+    "facings=angle_de": { "model": "zerotest:ornatedEmeraldBlock_c2angle", "x": 180 },
+    "facings=angle_dw": { "model": "zerotest:ornatedEmeraldBlock_c2angle", "x": 180, "y": 180 },
+    "facings=angle_nu": { "model": "zerotest:ornatedEmeraldBlock_c2angle", "y": -90 },
+    "facings=angle_su": { "model": "zerotest:ornatedEmeraldBlock_c2angle", "y": 90 },
+    "facings=angle_dn": { "model": "zerotest:ornatedEmeraldBlock_c2angle", "x": 180, "y": -90 },
+    "facings=angle_ds": { "model": "zerotest:ornatedEmeraldBlock_c2angle", "x": 180, "y": 90 },
+    "facings=angle_en": { "model": "zerotest:ornatedEmeraldBlock_c2angle", "x": 90 },
+    "facings=angle_es": { "model": "zerotest:ornatedEmeraldBlock_c2angle", "x": -90 },
+    "facings=angle_nw": { "model": "zerotest:ornatedEmeraldBlock_c2angle", "x": 90, "y": -90 },
+    "facings=angle_sw": { "model": "zerotest:ornatedEmeraldBlock_c2angle", "x": -90, "y": 90 },
+
+    "facings=opposite_du": { "model": "zerotest:ornatedEmeraldBlock_c2" },
+    "facings=opposite_ew": { "model": "zerotest:ornatedEmeraldBlock_c2", "x": -90, "y": 90  },
+    "facings=opposite_ns": { "model": "zerotest:ornatedEmeraldBlock_c2", "x": -90 },
+
+    "facings=cshape_duw": { "model": "zerotest:ornatedEmeraldBlock_c3T1" },
+    "facings=cshape_dsu": { "model": "zerotest:ornatedEmeraldBlock_c3T1", "y": -90 },
+    "facings=cshape_deu": { "model": "zerotest:ornatedEmeraldBlock_c3T1", "y": -180 },
+    "facings=cshape_dnu": { "model": "zerotest:ornatedEmeraldBlock_c3T1", "y": 90 },
+    "facings=cshape_nsw": { "model": "zerotest:ornatedEmeraldBlock_c3T1", "x": -90 },
+    "facings=cshape_ens": { "model": "zerotest:ornatedEmeraldBlock_c3T1", "x": -90, "y": 180 },
+
+    "facings=cshape_euw": { "model": "zerotest:ornatedEmeraldBlock_c3T2" },
+    "facings=cshape_esw": { "model": "zerotest:ornatedEmeraldBlock_c3T2", "x": -90 },
+    "facings=cshape_dew": { "model": "zerotest:ornatedEmeraldBlock_c3T2", "x": 180 },
+    "facings=cshape_enw": { "model": "zerotest:ornatedEmeraldBlock_c3T2", "x": 90 },
+    "facings=cshape_nsu": { "model": "zerotest:ornatedEmeraldBlock_c3T2", "y": 90 },
+    "facings=cshape_dns": { "model": "zerotest:ornatedEmeraldBlock_c3T2", "x": 180, "y": 90 },
+
+    "facings=corner_esu": { "model": "zerotest:ornatedEmeraldBlock_c3angle" },
+    "facings=corner_suw": { "model": "zerotest:ornatedEmeraldBlock_c3angle", "y": 90 },
+    "facings=corner_enu": { "model": "zerotest:ornatedEmeraldBlock_c3angle", "x": 90 },
+    "facings=corner_den": { "model": "zerotest:ornatedEmeraldBlock_c3angle", "x": 180 },
+    "facings=corner_des": { "model": "zerotest:ornatedEmeraldBlock_c3angle", "x": 270 },
+
+    "facings=corner_dsw": { "model": "zerotest:ornatedEmeraldBlock_c3angle", "x": 180, "y": -180 },
+    "facings=corner_dnw": { "model": "zerotest:ornatedEmeraldBlock_c3angle", "x": -90, "y": -180 },
+    "facings=corner_nuw": { "model": "zerotest:ornatedEmeraldBlock_c3angle", "x": 90, "y": -90 },
+
+    "facings=pipe_deuw": { "model": "zerotest:ornatedEmeraldBlock_c4X" },
+    "facings=pipe_ensw": { "model": "zerotest:ornatedEmeraldBlock_c4X", "x": 90 },
+    "facings=pipe_dnsu": { "model": "zerotest:ornatedEmeraldBlock_c4X", "y": 90 },
+
+    "facings=misc_dnuw": { "model": "zerotest:ornatedEmeraldBlock_c4angle" },
+    "facings=misc_dnsw": { "model": "zerotest:ornatedEmeraldBlock_c4angle", "x": 90 },
+    "facings=misc_nsuw": { "model": "zerotest:ornatedEmeraldBlock_c4angle", "x": -90 },
+    "facings=misc_dsuw": { "model": "zerotest:ornatedEmeraldBlock_c4angle", "y": -90 },
+    "facings=misc_denu": { "model": "zerotest:ornatedEmeraldBlock_c4angle", "y": 90 },
+    "facings=misc_desu": { "model": "zerotest:ornatedEmeraldBlock_c4angle", "y": 180 },
+    "facings=misc_ensu": { "model": "zerotest:ornatedEmeraldBlock_c4angle", "x": -90, "y": 180 },
+    "facings=misc_dens": { "model": "zerotest:ornatedEmeraldBlock_c4angle", "x": 90, "y": 180 },
+    "facings=misc_esuw": { "model": "zerotest:ornatedEmeraldBlock_c4angle", "x": -90, "y": -90 },
+    "facings=misc_desw": { "model": "zerotest:ornatedEmeraldBlock_c4angle", "x": -270, "y": -90 },
+    "facings=misc_enuw": { "model": "zerotest:ornatedEmeraldBlock_c4angle", "x": -90, "y": 90 },
+    "facings=misc_denw": { "model": "zerotest:ornatedEmeraldBlock_c4angle", "x": -270, "y": -270 },
+
+    "facings=pipeend_densw": { "model": "zerotest:ornatedEmeraldBlock_c5-6" },
+    "facings=pipeend_desuw": { "model": "zerotest:ornatedEmeraldBlock_c5-6" },
+    "facings=pipeend_dnsuw": { "model": "zerotest:ornatedEmeraldBlock_c5-6" },
+    "facings=pipeend_densu": { "model": "zerotest:ornatedEmeraldBlock_c5-6" },
+    "facings=pipeend_denuw": { "model": "zerotest:ornatedEmeraldBlock_c5-6" },
+    "facings=pipeend_ensuw": { "model": "zerotest:ornatedEmeraldBlock_c5-6" },
+
+    "facings=all": { "model": "zerotest:ornatedEmeraldBlock_c5-6" },
+	
+	"inventory": {
+      "transform": "forge:default-block",
+      "model": "zerotest:ornatedEmeraldBlock_c0"
+    }
+  }
+}
