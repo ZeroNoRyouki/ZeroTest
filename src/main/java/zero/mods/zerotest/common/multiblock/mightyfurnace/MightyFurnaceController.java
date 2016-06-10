@@ -6,8 +6,6 @@ import net.minecraftforge.fml.common.FMLLog;
 import zero.mods.zerocore.api.multiblock.IMultiblockPart;
 import zero.mods.zerocore.api.multiblock.validation.IMultiblockValidator;
 import zero.mods.zerocore.api.multiblock.MultiblockControllerBase;
-import zero.mods.zerocore.api.multiblock.validation.InvalidPart;
-import zero.mods.zerocore.api.multiblock.validation.ValidationError;
 import zero.mods.zerocore.api.multiblock.rectangular.RectangularMultiblockControllerBase;
 
 public class MightyFurnaceController extends RectangularMultiblockControllerBase /*implements IEnergyReceiver*/ {
@@ -72,35 +70,35 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
     @Override
     protected boolean isBlockGoodForFrame(World world, int x, int y, int z, IMultiblockValidator validatorCallback) {
 
-        validatorCallback.setLastError(new InvalidPart("zerocoretest:api.multiblock.validation.invalid_block", x, y, z));
+        validatorCallback.setLastError("zerocoretest:api.multiblock.validation.invalid_block", x, y, z);
         return false;
     }
 
     @Override
     protected boolean isBlockGoodForTop(World world, int x, int y, int z, IMultiblockValidator validatorCallback) {
 
-        validatorCallback.setLastError(new InvalidPart("zerocoretest:api.multiblock.validation.invalid_block", x, y, z));
+        validatorCallback.setLastError("zerocoretest:api.multiblock.validation.invalid_block", x, y, z);
         return false;
     }
 
     @Override
     protected boolean isBlockGoodForBottom(World world, int x, int y, int z, IMultiblockValidator validatorCallback) {
 
-        validatorCallback.setLastError(new InvalidPart("zerocoretest:api.multiblock.validation.invalid_block", x, y, z));
+        validatorCallback.setLastError("zerocoretest:api.multiblock.validation.invalid_block", x, y, z);
         return false;
     }
 
     @Override
     protected boolean isBlockGoodForSides(World world, int x, int y, int z, IMultiblockValidator validatorCallback) {
 
-        validatorCallback.setLastError(new InvalidPart("zerocoretest:api.multiblock.validation.invalid_block", x, y, z));
+        validatorCallback.setLastError("zerocoretest:api.multiblock.validation.invalid_block", x, y, z);
         return false;
     }
 
     @Override
     protected boolean isBlockGoodForInterior(World world, int x, int y, int z, IMultiblockValidator validatorCallback) {
 
-        validatorCallback.setLastError(new InvalidPart("zerocoretest:api.multiblock.validation.invalid_block", x, y, z));
+        validatorCallback.setLastError("zerocoretest:api.multiblock.validation.invalid_block", x, y, z);
         return false;
     }
 
@@ -151,7 +149,7 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
                 if (null != powerPort) {
 
-                    validatorCallback.setLastError(new ValidationError("zerocoretest:api.multiblock.validation.powerport_already_present"));
+                    validatorCallback.setLastError("zerocoretest:api.multiblock.validation.powerport_already_present");
                     return false;
                 }
 
@@ -166,7 +164,7 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
                     if (null != inputPort) {
 
-                        validatorCallback.setLastError(new ValidationError("zerocoretest:api.multiblock.validation.inputport_already_present"));
+                        validatorCallback.setLastError("zerocoretest:api.multiblock.validation.inputport_already_present");
                         return false;
                     }
 
@@ -176,7 +174,7 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
                     if (null != outputPort) {
 
-                        validatorCallback.setLastError(new ValidationError("zerocoretest:api.multiblock.validation.outputport_already_present"));
+                        validatorCallback.setLastError("zerocoretest:api.multiblock.validation.outputport_already_present");
                         return false;
                     }
 
@@ -187,19 +185,19 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
         if (null == powerPort) {
 
-            validatorCallback.setLastError(new ValidationError("zerocoretest:api.multiblock.validation.powerport_missing"));
+            validatorCallback.setLastError("zerocoretest:api.multiblock.validation.powerport_missing");
             return false;
         }
 
         if (null == inputPort) {
 
-            validatorCallback.setLastError(new ValidationError("zerocoretest:api.multiblock.validation.inputport_missing"));
+            validatorCallback.setLastError("zerocoretest:api.multiblock.validation.inputport_missing");
             return false;
         }
 
         if (null == outputPort) {
 
-            validatorCallback.setLastError(new ValidationError("zerocoretest:api.multiblock.validation.outputport_missing"));
+            validatorCallback.setLastError("zerocoretest:api.multiblock.validation.outputport_missing");
             return false;
         }
 
