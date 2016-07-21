@@ -1,4 +1,4 @@
-package zero.mods.zerotest.common.block.ctx;
+package it.zerono.mods.zerotest.common.block.ctx;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -7,15 +7,15 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
-import zero.mods.zerocore.lib.BlockFacings;
-import zero.mods.zerocore.lib.PropertyBlockFacings;
-import zero.mods.zerotest.common.block.TestBlockBase;
+import it.zerono.mods.zerocore.lib.BlockFacings;
+import it.zerono.mods.zerocore.lib.PropertyBlockFacings;
+import it.zerono.mods.zerotest.common.block.TestBlockBase;
 
 public class OrnatedEmeraldBlock extends TestBlockBase {
 
     public OrnatedEmeraldBlock(String blockName) {
 
-        super(blockName, Material.iron);
+        super(blockName, Material.IRON);
 
         this._actualFacings = new boolean[EnumFacing.VALUES.length];
 

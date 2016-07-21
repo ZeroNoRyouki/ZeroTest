@@ -1,4 +1,4 @@
-package zero.mods.zerotest.common.multiblock.mightyfurnace;
+package it.zerono.mods.zerotest.common.multiblock.mightyfurnace;
 
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.util.IStringSerializable;

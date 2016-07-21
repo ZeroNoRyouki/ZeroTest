@@ -1,7 +1,7 @@
-package zero.mods.zerotest.common.multiblock.mightyfurnace;
+package it.zerono.mods.zerotest.common.multiblock.mightyfurnace;
 
-import zero.mods.zerocore.api.multiblock.validation.IMultiblockValidator;
-import zero.mods.zerocore.api.multiblock.validation.ValidationError;
+import it.zerono.mods.zerocore.api.multiblock.validation.IMultiblockValidator;
+import it.zerono.mods.zerocore.api.multiblock.validation.ValidationError;
 
 public class MightyFurnacePowerTileEntity extends MightyFurnaceTileEntity /*implements IEnergyReceiver*/ {
 

@@ -1,8 +1,8 @@
-package zero.mods.zerotest.common.block;
+package it.zerono.mods.zerotest.common.block;
 
+import it.zerono.mods.zerotest.ZeroTest;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import zero.mods.zerotest.ZeroTest;
 
 public class TestBlockBase extends Block {
 

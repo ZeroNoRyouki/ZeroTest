@@ -1,12 +1,13 @@
-package zero.mods.zerotest.common.multiblock.mightyfurnace;
+package it.zerono.mods.zerotest.common.multiblock.mightyfurnace;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLLog;
-import zero.mods.zerocore.api.multiblock.IMultiblockPart;
-import zero.mods.zerocore.api.multiblock.validation.IMultiblockValidator;
-import zero.mods.zerocore.api.multiblock.MultiblockControllerBase;
-import zero.mods.zerocore.api.multiblock.rectangular.RectangularMultiblockControllerBase;
+import it.zerono.mods.zerocore.api.multiblock.IMultiblockPart;
+import it.zerono.mods.zerocore.api.multiblock.validation.IMultiblockValidator;
+import it.zerono.mods.zerocore.api.multiblock.MultiblockControllerBase;
+import it.zerono.mods.zerocore.api.multiblock.rectangular.RectangularMultiblockControllerBase;
+import it.zerono.mods.zerocore.lib.block.ModTileEntity;
 
 public class MightyFurnaceController extends RectangularMultiblockControllerBase /*implements IEnergyReceiver*/ {
 
@@ -209,7 +210,7 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
         this.lookupPorts();
 
-        if (this.worldObj.isRemote)
+        if (this.WORLD.isRemote)
             // on the client, force a render update
             this.markReferenceCoordForUpdate();
 
@@ -223,7 +224,7 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
         FMLLog.info("CONTROLLER - restored");
 
-        if (this.worldObj.isRemote)
+        if (this.WORLD.isRemote)
             // on the client, force a render update
             this.markReferenceCoordForUpdate();
     }
@@ -234,7 +235,7 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
         // pause work?
         FMLLog.info("CONTROLLER - paused");
 
-        if (this.worldObj.isRemote)
+        if (this.WORLD.isRemote)
             // on the client, force a render update
             this.markReferenceCoordForUpdate();
     }
@@ -244,7 +245,7 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
         FMLLog.info("CONTROLLER - disassembled");
 
-        if (this.worldObj.isRemote)
+        if (this.WORLD.isRemote)
             // on the client, force a render update
             this.markReferenceCoordForUpdate();
     }
@@ -300,7 +301,7 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
     @Override
     protected void updateClient() {
     }
-
+    /*
     @Override
     public void writeToNBT(NBTTagCompound data) {
     }
@@ -315,6 +316,15 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
     @Override
     public void decodeDescriptionPacket(NBTTagCompound data) {
+    }
+    */
+
+    @Override
+    protected void syncDataFromServer(NBTTagCompound data, ModTileEntity.SyncReason syncReason) {
+    }
+
+    @Override
+    protected void syncDataToClient(NBTTagCompound data, ModTileEntity.SyncReason syncReason) {
     }
 
     private void lookupPorts() {

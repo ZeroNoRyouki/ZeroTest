@@ -1,9 +1,9 @@
-package zero.mods.zerotest.common.multiblock.mightyfurnace;
+package it.zerono.mods.zerotest.common.multiblock.mightyfurnace;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import zero.mods.zerocore.api.multiblock.validation.IMultiblockValidator;
-import zero.mods.zerocore.api.multiblock.validation.ValidationError;
+import it.zerono.mods.zerocore.api.multiblock.validation.IMultiblockValidator;
+import it.zerono.mods.zerocore.api.multiblock.validation.ValidationError;
 
 public class MightyFurnaceIOPortTileEntity extends MightyFurnaceTileEntity /*implements IInventory, ISidedInventory*/ {
 
@@ -200,18 +200,18 @@ public class MightyFurnaceIOPortTileEntity extends MightyFurnaceTileEntity /*imp
     // save/load state
 
     @Override
-    public void readFromNBT(NBTTagCompound data) {
+    protected void syncDataFrom(NBTTagCompound data, SyncReason syncReason) {
 
-        super.readFromNBT(data);
+        super.syncDataFrom(data, syncReason);
 
         if (data.hasKey("mfIOdir"))
             this._isInput = data.getBoolean("mfIOdir");
     }
 
     @Override
-    public void writeToNBT(NBTTagCompound data) {
+    protected void syncDataTo(NBTTagCompound data, SyncReason syncReason) {
 
-        super.writeToNBT(data);
+        super.syncDataTo(data, syncReason);
         data.setBoolean("mfIOdir", this._isInput);
     }
 

@@ -1,13 +1,12 @@
-package zero.mods.zerotest.client;
+package it.zerono.mods.zerotest.client;
 
+import it.zerono.mods.zerotest.common.block.TestBlockBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import zero.mods.zerocore.api.multiblock.MultiblockClientTickHandler;
-import zero.mods.zerotest.common.CommonProxy;
-import zero.mods.zerotest.common.block.TestBlockBase;
+//import it.zerono.mods.zerocore.api.multiblock.MultiblockClientTickHandler;
+import it.zerono.mods.zerotest.common.CommonProxy;
 
 public class ClientProxy extends CommonProxy {
 
@@ -26,6 +25,6 @@ public class ClientProxy extends CommonProxy {
     public void onInit(FMLInitializationEvent event) {
 
         super.onInit(event);
-        MinecraftForge.EVENT_BUS.register(new MultiblockClientTickHandler());
+        //MinecraftForge.EVENT_BUS.register(new MultiblockClientTickHandler());
     }
 }

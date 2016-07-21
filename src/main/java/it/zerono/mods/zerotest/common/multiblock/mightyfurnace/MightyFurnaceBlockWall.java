@@ -1,22 +1,15 @@
-package zero.mods.zerotest.common.multiblock.mightyfurnace;
+package it.zerono.mods.zerotest.common.multiblock.mightyfurnace;
 
 import com.google.common.collect.Lists;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.FMLLog;
-import zero.mods.zerocore.api.multiblock.IMultiblockPart;
-import zero.mods.zerocore.lib.BlockFacings;
-import zero.mods.zerocore.lib.PropertyBlockFacings;
+import it.zerono.mods.zerocore.api.multiblock.IMultiblockPart;
+import it.zerono.mods.zerocore.lib.BlockFacings;
+import it.zerono.mods.zerocore.lib.PropertyBlockFacings;
 import java.util.ArrayList;
 
 public class MightyFurnaceBlockWall extends MightyFurnaceBlockBase {

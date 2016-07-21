@@ -1,4 +1,4 @@
-package zero.mods.zerotest;
+package it.zerono.mods.zerotest;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -11,8 +11,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zero.mods.zerotest.common.CommonProxy;
-import zero.mods.zerotest.common.init.Blocks;
+import it.zerono.mods.zerotest.common.CommonProxy;
 
 @Mod(modid = References.MOD_ID, acceptedMinecraftVersions = References.MOD_MCVERSION,
         dependencies = References.MOD_DEPENDENCIES, version = References.MOD_VERSION)
@@ -54,7 +53,7 @@ public class ZeroTest {
         @Override
         @SideOnly(Side.CLIENT)
         public Item getTabIconItem() {
-            return Items.skull;
+            return Items.SKULL;
         }
     };
 

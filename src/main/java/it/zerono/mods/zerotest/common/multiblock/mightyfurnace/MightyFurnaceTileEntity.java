@@ -1,8 +1,9 @@
-package zero.mods.zerotest.common.multiblock.mightyfurnace;
+package it.zerono.mods.zerotest.common.multiblock.mightyfurnace;
 
-import zero.mods.zerocore.api.multiblock.validation.IMultiblockValidator;
-import zero.mods.zerocore.api.multiblock.MultiblockControllerBase;
-import zero.mods.zerocore.api.multiblock.rectangular.RectangularMultiblockTileEntityBase;
+import net.minecraft.util.math.BlockPos;
+import it.zerono.mods.zerocore.api.multiblock.validation.IMultiblockValidator;
+import it.zerono.mods.zerocore.api.multiblock.MultiblockControllerBase;
+import it.zerono.mods.zerocore.api.multiblock.rectangular.RectangularMultiblockTileEntityBase;
 
 public class MightyFurnaceTileEntity extends RectangularMultiblockTileEntityBase {
 
@@ -65,9 +66,14 @@ public class MightyFurnaceTileEntity extends RectangularMultiblockTileEntityBase
         return MightyFurnaceController.class;
     }
 
+    @Override
+    public BlockPos getWorldPosition() {
+        return this.pos;
+    }
+
     private void updateBlockState() {
 
         // FIX
-        //this.worldObj.markBlockForUpdate(this.pos);
+        //this.WORLD.markBlockForUpdate(this.pos);
     }
 }

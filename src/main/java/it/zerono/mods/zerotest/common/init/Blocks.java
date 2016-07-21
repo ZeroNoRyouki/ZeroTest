@@ -1,9 +1,9 @@
-package zero.mods.zerotest.common.init;
+package it.zerono.mods.zerotest.common.init;
 
-import zero.mods.zerotest.ZeroTest;
-import zero.mods.zerotest.common.CommonProxy;
-import zero.mods.zerotest.common.block.ctx.OrnatedEmeraldBlock;
-import zero.mods.zerotest.common.multiblock.mightyfurnace.*;
+import it.zerono.mods.zerotest.ZeroTest;
+import it.zerono.mods.zerotest.common.CommonProxy;
+import it.zerono.mods.zerotest.common.block.ctx.OrnatedEmeraldBlock;
+import it.zerono.mods.zerotest.common.multiblock.mightyfurnace.*;
 
 public final class Blocks {
 

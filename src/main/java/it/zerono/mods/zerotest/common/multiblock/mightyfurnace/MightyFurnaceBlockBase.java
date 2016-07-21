@@ -1,4 +1,4 @@
-package zero.mods.zerotest.common.multiblock.mightyfurnace;
+package it.zerono.mods.zerotest.common.multiblock.mightyfurnace;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -11,10 +11,10 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import zero.mods.zerocore.api.multiblock.IMultiblockPart;
-import zero.mods.zerocore.api.multiblock.MultiblockControllerBase;
-import zero.mods.zerocore.api.multiblock.validation.ValidationError;
-import zero.mods.zerotest.common.block.TestBlockBase;
+import it.zerono.mods.zerocore.api.multiblock.IMultiblockPart;
+import it.zerono.mods.zerocore.api.multiblock.MultiblockControllerBase;
+import it.zerono.mods.zerocore.api.multiblock.validation.ValidationError;
+import it.zerono.mods.zerotest.common.block.TestBlockBase;
 
 public abstract class MightyFurnaceBlockBase extends TestBlockBase {
 
@@ -85,10 +85,10 @@ public abstract class MightyFurnaceBlockBase extends TestBlockBase {
 
     protected MightyFurnaceBlockBase(String name, MightyFurnaceBlockType blockType) {
 
-        super(name, Material.iron);
+        super(name, Material.IRON);
         this.setHardness(1.5F);
         this.setResistance(10.0F);
-        this.setStepSound(SoundType.METAL);
+        this.setSoundType(SoundType.METAL);
 
         this._myType = blockType;
     }

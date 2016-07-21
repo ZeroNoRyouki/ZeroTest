@@ -1,21 +1,14 @@
-package zero.mods.zerotest.common;
+package it.zerono.mods.zerotest.common;
 
+import it.zerono.mods.zerotest.common.block.TestBlockBase;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.FMLLog;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import zero.mods.zerocore.api.multiblock.MultiblockEventHandler;
-import zero.mods.zerocore.api.multiblock.MultiblockServerTickHandler;
-import zero.mods.zerotest.References;
-import zero.mods.zerotest.ZeroTest;
-import zero.mods.zerotest.common.block.TestBlockBase;
-import zero.mods.zerotest.common.init.Blocks;
+import it.zerono.mods.zerotest.References;
+import it.zerono.mods.zerotest.common.init.Blocks;
 
 public class CommonProxy {
 
@@ -39,10 +32,6 @@ public class CommonProxy {
 
     public void onInit(FMLInitializationEvent event) {
 
-        // register multiblock API event handler
-        MinecraftForge.EVENT_BUS.register(new MultiblockEventHandler());
-
-        MinecraftForge.EVENT_BUS.register(new MultiblockServerTickHandler());
     }
 
     public void onPostInit(FMLPostInitializationEvent event) {
