@@ -4,8 +4,6 @@ import it.zerono.mods.zerotest.common.block.TestBlockBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-//import it.zerono.mods.zerocore.api.multiblock.MultiblockClientTickHandler;
 import it.zerono.mods.zerotest.common.CommonProxy;
 
 public class ClientProxy extends CommonProxy {
@@ -19,12 +17,5 @@ public class ClientProxy extends CommonProxy {
                 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
 
         return block;
-    }
-
-    @Override
-    public void onInit(FMLInitializationEvent event) {
-
-        super.onInit(event);
-        //MinecraftForge.EVENT_BUS.register(new MultiblockClientTickHandler());
     }
 }
