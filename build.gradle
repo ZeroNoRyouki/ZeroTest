@@ -21,7 +21,7 @@ plugins {
 }
 */
 version = "1.9.4-0.0.2"
-group= "zero.mods.zerotest" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group= "it.zerono.mods.zerotest" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "zerotest"
 
 minecraft {
@@ -63,6 +63,8 @@ dependencies {
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    compile files("../ZeroCore/build/libs/zerocore-1.9.4-0.0.2.jar")
 
 }
 
