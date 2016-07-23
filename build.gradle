@@ -20,12 +20,12 @@ plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }
 */
-version = "1.9.4-0.0.2"
+version = "1.10.2-0.0.2"
 group= "it.zerono.mods.zerotest" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "zerotest"
 
 minecraft {
-    version = "1.9-12.16.1.1934"
+    version = "1.10.2-12.18.1.2018"
 	
 	if (file('../run').exists()) {
 		runDir = "../run"
@@ -64,7 +64,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
-    compile files("../ZeroCore/build/libs/zerocore-1.9.4-0.0.2.jar")
+    compile files("../ZeroCore/build/libs/zerocore-1.10.2-0.0.2.jar")
 
 }
 
