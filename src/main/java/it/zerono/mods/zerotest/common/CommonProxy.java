@@ -20,12 +20,10 @@ public class CommonProxy {
     }
 
     public void register(Class<? extends TileEntity> tileEntityClass) {
-
         GameRegistry.registerTileEntity(tileEntityClass, References.MOD_ID + tileEntityClass.getSimpleName());
     }
 
     public void onPreInit(FMLPreInitializationEvent event) {
-
         // register blocks
         Blocks.initialize();
     }
