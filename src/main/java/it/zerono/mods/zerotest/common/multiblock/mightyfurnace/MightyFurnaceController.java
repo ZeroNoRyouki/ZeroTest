@@ -320,11 +320,11 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
     */
 
     @Override
-    protected void syncDataFromServer(NBTTagCompound data, ModTileEntity.SyncReason syncReason) {
+    protected void syncDataFrom(NBTTagCompound data, ModTileEntity.SyncReason syncReason) {
     }
 
     @Override
-    protected void syncDataToClient(NBTTagCompound data, ModTileEntity.SyncReason syncReason) {
+    protected void syncDataTo(NBTTagCompound data, ModTileEntity.SyncReason syncReason) {
     }
 
     private void lookupPorts() {
