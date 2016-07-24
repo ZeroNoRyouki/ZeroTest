@@ -1,5 +1,6 @@
 package it.zerono.mods.zerotest.common.multiblock.mightyfurnace;
 
+import it.zerono.mods.zerocore.util.WorldHelper;
 import net.minecraft.util.math.BlockPos;
 import it.zerono.mods.zerocore.api.multiblock.validation.IMultiblockValidator;
 import it.zerono.mods.zerocore.api.multiblock.MultiblockControllerBase;
@@ -56,13 +57,11 @@ public class MightyFurnaceTileEntity extends RectangularMultiblockTileEntityBase
 
     @Override
     public MultiblockControllerBase createNewMultiblock() {
-
         return new MightyFurnaceController(this.worldObj);
     }
 
     @Override
     public Class<? extends MultiblockControllerBase> getMultiblockControllerType() {
-
         return MightyFurnaceController.class;
     }
 
@@ -71,9 +70,11 @@ public class MightyFurnaceTileEntity extends RectangularMultiblockTileEntityBase
         return this.pos;
     }
 
-    private void updateBlockState() {
+    public MightyFurnaceController getFurnaceController() {
+        return (MightyFurnaceController)this.getMultiblockController();
+    }
 
-        // FIX
-        //this.WORLD.markBlockForUpdate(this.pos);
+    private void updateBlockState() {
+        WorldHelper.notifyBlockUpdate(this.worldObj, this.pos, null, null);
     }
 }

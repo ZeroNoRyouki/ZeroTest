@@ -47,22 +47,30 @@ public abstract class MightyFurnaceBlockBase extends TestBlockBase {
     @Override
     public boolean onBlockActivated(World world, BlockPos position, IBlockState state, EntityPlayer player, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
 
-        boolean isServerSide = !world.isRemote;
-
-        if (!world.isRemote || player.isSneaking() || (hand != EnumHand.OFF_HAND) || (null != heldItem))
+        if (world.isRemote || (hand != EnumHand.OFF_HAND) || (null != heldItem))
             return false;
 
-        MultiblockControllerBase controller = this.getMultiblockController(world, position);
+        MightyFurnaceController controller = this.getFurnaceController(world, position);
 
         if (null != controller) {
 
-            ValidationError status = controller.getLastError();
+            if (player.isSneaking()) {
 
-            if (null != status) {
-
-                //player.addChatMessage(new TextComponentString(status.getValidationMessage()));
-                player.addChatMessage(status.getChatMessage());
+                // toggle machine status
+                controller.toggleActive();
                 return true;
+
+            } else {
+
+                // display any validation errors
+
+                ValidationError status = controller.getLastError();
+
+                if (null != status) {
+
+                    player.addChatMessage(status.getChatMessage());
+                    return true;
+                }
             }
         }
 
@@ -81,6 +89,13 @@ public abstract class MightyFurnaceBlockBase extends TestBlockBase {
         IMultiblockPart part = this.getMultiblockPartAt(world, position);
 
         return null != part ? part.getMultiblockController() : null;
+    }
+
+    protected MightyFurnaceController getFurnaceController(IBlockAccess world, BlockPos position) {
+
+        MultiblockControllerBase controller = this.getMultiblockController(world, position);
+
+        return controller instanceof MightyFurnaceController ? (MightyFurnaceController)controller : null;
     }
 
     protected MightyFurnaceBlockBase(String name, MightyFurnaceBlockType blockType) {

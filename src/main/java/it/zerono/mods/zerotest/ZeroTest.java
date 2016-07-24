@@ -3,7 +3,6 @@ package it.zerono.mods.zerotest;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -12,10 +11,13 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import it.zerono.mods.zerotest.common.CommonProxy;
+import org.apache.logging.log4j.Logger;
 
 @Mod(modid = References.MOD_ID, acceptedMinecraftVersions = References.MOD_MCVERSION,
         dependencies = References.MOD_DEPENDENCIES, version = References.MOD_VERSION)
 public class ZeroTest {
+
+    public static Logger LOGGER;
 
     public static ZeroTest getInstance() {
 
@@ -30,21 +32,17 @@ public class ZeroTest {
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent event) {
 
-        FMLLog.info("ZeroTest pre init");
+        LOGGER = event.getModLog();
         ZeroTest.getProxy().onPreInit(event);
     }
 
     @Mod.EventHandler
     public void onInit(FMLInitializationEvent event) {
-
-        FMLLog.info("ZeroTest init");
         ZeroTest.getProxy().onInit(event);
     }
 
     @Mod.EventHandler
     public void onPostInit(FMLPostInitializationEvent event) {
-
-        FMLLog.info("ZeroTest post init");
         ZeroTest.getProxy().onPostInit(event);
     }
 

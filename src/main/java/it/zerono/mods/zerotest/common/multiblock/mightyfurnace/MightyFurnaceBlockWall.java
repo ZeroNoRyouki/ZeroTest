@@ -1,7 +1,6 @@
 package it.zerono.mods.zerotest.common.multiblock.mightyfurnace;
 
 import com.google.common.collect.Lists;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -20,65 +19,8 @@ public class MightyFurnaceBlockWall extends MightyFurnaceBlockBase {
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACES, PropertyBlockFacings.All));
     }
 
-    /*
-    @Override
-    public boolean onBlockActivated(World world, BlockPos position, IBlockState state, EntityPlayer player,
-                                    EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
-
-        IMultiblockPart tile = this.getMultiblockPartAt(world, position);
-
-        if (tile instanceof MightyFurnaceTileEntity) {
-
-            MightyFurnaceTileEntity part = (MightyFurnaceTileEntity)tile;
-            MightyFurnaceController controller = (MightyFurnaceController)part.getMultiblockController();
-
-            if (null == controller) {
-                FMLLog.warning("WALL - got null controller!");
-                player.addChatMessage(new TextComponentString(String.format("CONTROLLER IS NULL ON %s",
-                        world.isRemote ? "CLIENT" : "SERVER")));
-            }
-
-            if ((null != controller) && controller.isAssembled()) {
-
-                FMLLog.warning("WALL - onBlockActivated: controller report machine is assembled!");
-
-                if (!world.isRemote) {
-
-                    world.notifyBlockUpdate(position, state, state, 3);
-
-                    int stored = 0; // controller.getEnergyStored(EnumFacing.EAST);
-                    player.addChatMessage(new TextComponentString(String.format("MB - energy stored = %d", stored)));
-
-                    return true;
-                }
-
-                world.notifyBlockUpdate(position, state, state, 3);
-
-                / *
-                int energy = controller.getEnergyStored(EnumFacing.UP);
-
-                player.addChatMessage(new ChatComponentText(String.format("Energy stored = %d RF", energy)));
-                * /
-                return true;
-            } else {
-
-                FMLLog.warning((null != controller) ? "WALL - onBlockActivated: controller report machine is NOT assembled!" : "null controller!");
-            }
-        }
-
-        return false;
-    }
-    */
-    /*
-    @Override
-    public String getBlockNameStateSuffix(ItemStack stack) {
-        return null;
-    }
-    */
-
     @Override
     public int getMetaFromState(IBlockState state) {
-
         return 0;
     }
 
@@ -112,8 +54,7 @@ public class MightyFurnaceBlockWall extends MightyFurnaceBlockBase {
 
     @Override
     protected BlockStateContainer createBlockState() {
-
-        return new BlockStateContainer(this, new IProperty[] {FACES});
+        return new BlockStateContainer(this, FACES);
     }
 
     private final static PropertyEnum FACES ;

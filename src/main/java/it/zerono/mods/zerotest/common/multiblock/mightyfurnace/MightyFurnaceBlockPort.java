@@ -1,6 +1,5 @@
 package it.zerono.mods.zerotest.common.multiblock.mightyfurnace;
 
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
@@ -26,12 +25,6 @@ public class MightyFurnaceBlockPort extends MightyFurnaceBlockBase {
 
         this.setDefaultState(this.blockState.getBaseState().withProperty(HFACING, EnumFacing.NORTH).withProperty(ASSEMBLED, false));
     }
-    /*
-    @Override
-    public String getBlockNameStateSuffix(ItemStack stack) {
-        return null;
-    }
-    */
 
     /**
      * Convert the given metadata into a BlockState for this Block
@@ -53,7 +46,7 @@ public class MightyFurnaceBlockPort extends MightyFurnaceBlockBase {
     @Override
     public int getMetaFromState(IBlockState state) {
 
-        return ((EnumFacing)state.getValue(HFACING)).getIndex();
+        return (state.getValue(HFACING)).getIndex();
     }
 
     @Override
@@ -110,7 +103,7 @@ public class MightyFurnaceBlockPort extends MightyFurnaceBlockBase {
      * */
     public void onBlockAdded(World world, BlockPos position, IBlockState state) {
 
-        EnumFacing newFacing = this.suggestDefaultFacing(world, position, (EnumFacing)state.getValue(HFACING));
+        EnumFacing newFacing = this.suggestDefaultFacing(world, position, state.getValue(HFACING));
 
         world.setBlockState(position, state.withProperty(HFACING, newFacing), 2);
     }
@@ -126,12 +119,6 @@ public class MightyFurnaceBlockPort extends MightyFurnaceBlockBase {
     protected EnumFacing suggestDefaultFacing(World world, BlockPos position, EnumFacing currentFacing) {
 
         EnumFacing oppositeFacing = currentFacing.getOpposite();
-        /*
-        Block facingBlock = world.getBlockState(position.offset(currentFacing)).getBlock();
-        Block oppositeBlock = world.getBlockState(position.offset(oppositeFacing)).getBlock();
-
-        return facingBlock.isFullBlock() && !oppositeBlock.isFullBlock() ? oppositeFacing : currentFacing;
-        */
         IBlockState facingBlockState = world.getBlockState(position.offset(currentFacing));
         IBlockState oppositeBlockState = world.getBlockState(position.offset(oppositeFacing));
 
@@ -141,6 +128,6 @@ public class MightyFurnaceBlockPort extends MightyFurnaceBlockBase {
     @Override
     protected BlockStateContainer createBlockState() {
 
-        return new BlockStateContainer(this, new IProperty[] {HFACING, ASSEMBLED});
+        return new BlockStateContainer(this, HFACING, ASSEMBLED);
     }
 }

@@ -1,16 +1,15 @@
 package it.zerono.mods.zerotest.common.multiblock.mightyfurnace;
 
+import it.zerono.mods.zerocore.util.WorldHelper;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.FMLLog;
 import it.zerono.mods.zerocore.api.multiblock.IMultiblockPart;
 import it.zerono.mods.zerocore.api.multiblock.validation.IMultiblockValidator;
 import it.zerono.mods.zerocore.api.multiblock.MultiblockControllerBase;
 import it.zerono.mods.zerocore.api.multiblock.rectangular.RectangularMultiblockControllerBase;
 import it.zerono.mods.zerocore.lib.block.ModTileEntity;
 
-public class MightyFurnaceController extends RectangularMultiblockControllerBase /*implements IEnergyReceiver*/ {
-
+public class MightyFurnaceController extends RectangularMultiblockControllerBase {
 
     public MightyFurnaceController(World world) {
 
@@ -18,55 +17,37 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
         this._inputPort = this._outputPort = null;
         this._powerPort = null;
-        /*
-        this._rfStorage = null;
-        */
         this._active = false;
     }
 
     public boolean isActive() {
-
         return this._active;
     }
 
-    /*
-    public void switchActive() {
-
-        //this._active = !this._active;
-    }*/
-
-    // IEnergyReceiver begin
-    /*
-    @Override
-    public int receiveEnergy(EnumFacing facing, int maxReceive, boolean simulate) {
-
-        FMLLog.info("RFTEST - controller:receiveEnergy called (%s, %d, %s)", facing.toString(), maxReceive, simulate ? "simulation" : "real" );
-
-        int r = this.getRFStorage().receiveEnergy(maxReceive, simulate);
-
-        FMLLog.info("RFTEST - controller:receiveEnergy result = %d", r);
-        return r;
+    public void toggleActive() {
+        this.setActive(!this._active);
     }
 
-    @Override
-    public int getEnergyStored(EnumFacing facing) {
+    public void setActive(boolean active) {
 
-        return (null == this._rfStorage) ? 0 : this.getRFStorage().getEnergyStored();
+        if (this._active == active)
+            return;
+
+        // the state was changed, set it
+        this._active = active;
+
+        if (WorldHelper.calledByLogicalServer(this.WORLD)) {
+
+            // on the server side, request an update to be sent to the client and mark the save delegate as dirty
+            this.markReferenceCoordForUpdate();
+            this.markReferenceCoordDirty();
+
+        } else {
+
+            // on the client, request a render update
+            this.markMultiblockForRenderUpdate();
+        }
     }
-
-    @Override
-    public int getMaxEnergyStored(EnumFacing facing) {
-
-        return RF_CAPACITY;
-    }
-
-    @Override
-    public boolean canConnectEnergy(EnumFacing facing) {
-        return false; // never called
-    }
-
-    // IEnergyReceiver end
-    */
 
     @Override
     protected boolean isBlockGoodForFrame(World world, int x, int y, int z, IMultiblockValidator validatorCallback) {
@@ -105,14 +86,10 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
     @Override
     protected void onBlockAdded(IMultiblockPart newPart) {
-
-        FMLLog.info("MightyFurnaceController:onBlockAdded : %s", newPart.toString());
     }
 
     @Override
     protected void onBlockRemoved(IMultiblockPart oldPart) {
-
-        FMLLog.info("MightyFurnaceController:onBlockRemoved : %s", oldPart.toString());
 
         if (oldPart instanceof MightyFurnacePowerTileEntity) {
 
@@ -134,8 +111,6 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
     @Override
     protected boolean isMachineWhole(IMultiblockValidator validatorCallback) {
-
-        FMLLog.info("MightyFurnaceController:isMachineWhole");
 
         MightyFurnacePowerTileEntity powerPort = null;
         MightyFurnaceIOPortTileEntity inputPort = null;
@@ -212,9 +187,7 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
         if (this.WORLD.isRemote)
             // on the client, force a render update
-            this.markReferenceCoordForUpdate();
-
-        FMLLog.info("CONTROLLER - assembled");
+            this.markMultiblockForRenderUpdate();
     }
 
     @Override
@@ -222,32 +195,27 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
         this.lookupPorts();
 
-        FMLLog.info("CONTROLLER - restored");
-
         if (this.WORLD.isRemote)
             // on the client, force a render update
-            this.markReferenceCoordForUpdate();
+            this.markMultiblockForRenderUpdate();
     }
 
     @Override
     protected void onMachinePaused() {
 
         // pause work?
-        FMLLog.info("CONTROLLER - paused");
 
         if (this.WORLD.isRemote)
             // on the client, force a render update
-            this.markReferenceCoordForUpdate();
+            this.markMultiblockForRenderUpdate();
     }
 
     @Override
     protected void onMachineDisassembled() {
 
-        FMLLog.info("CONTROLLER - disassembled");
-
         if (this.WORLD.isRemote)
             // on the client, force a render update
-            this.markReferenceCoordForUpdate();
+            this.markMultiblockForRenderUpdate();
     }
 
     @Override
@@ -264,67 +232,43 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
     @Override
     protected int getMinimumNumberOfBlocksForAssembledMachine() {
-
-        FMLLog.info("Controller.getMinimumNumberOfBlocksForAssembledMachine called");
-
         return 27;
     }
 
     @Override
     protected int getMaximumXSize() {
-
         return 3;
     }
 
     @Override
     protected int getMaximumZSize() {
-
         return 3;
     }
 
     @Override
     protected int getMaximumYSize() {
-
         return 3;
     }
 
     @Override
     protected boolean updateServer() {
-
-        // consume energy
-        /*
-        this._active = this.tryToConsumeEnergy(RF_PER_OPERATION);
-        */
         return false;
     }
 
     @Override
     protected void updateClient() {
     }
-    /*
+
     @Override
-    public void writeToNBT(NBTTagCompound data) {
+    protected void syncDataFrom(NBTTagCompound data, ModTileEntity.SyncReason syncReason) {
+
+        if (data.hasKey("isActive"))
+            this.setActive(data.getBoolean("isActive"));
     }
 
     @Override
-    public void readFromNBT(NBTTagCompound data) {
-    }
-
-    @Override
-    public void formatDescriptionPacket(NBTTagCompound data) {
-    }
-
-    @Override
-    public void decodeDescriptionPacket(NBTTagCompound data) {
-    }
-    */
-
-    @Override
-    protected void syncDataFromServer(NBTTagCompound data, ModTileEntity.SyncReason syncReason) {
-    }
-
-    @Override
-    protected void syncDataToClient(NBTTagCompound data, ModTileEntity.SyncReason syncReason) {
+    protected void syncDataTo(NBTTagCompound data, ModTileEntity.SyncReason syncReason) {
+        data.setBoolean("isActive", this.isActive());
     }
 
     private void lookupPorts() {
@@ -349,34 +293,8 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
         }
     }
 
-    /*
-    protected EnergyStorage getRFStorage() {
-
-        if (null == this._rfStorage)
-            this._rfStorage = new EnergyStorage(RF_CAPACITY, RF_PER_OPERATION * 2, RF_PER_OPERATION);
-
-        return this._rfStorage;
-    }
-
-    protected boolean tryToConsumeEnergy(int amount) {
-
-        if ((null == this._rfStorage) ||(amount != this._rfStorage.extractEnergy(amount, true)))
-            return  false;
-
-        this._rfStorage.extractEnergy(amount, false);
-        return true;
-    }
-    */
-
     private MightyFurnaceIOPortTileEntity _inputPort;
     private MightyFurnaceIOPortTileEntity _outputPort;
     private MightyFurnacePowerTileEntity _powerPort;
     private boolean _active;
-
-    /*
-    private EnergyStorage _rfStorage;
-
-    private static final int RF_CAPACITY = 1000;
-    private static final int RF_PER_OPERATION = 100;
-    */
 }
