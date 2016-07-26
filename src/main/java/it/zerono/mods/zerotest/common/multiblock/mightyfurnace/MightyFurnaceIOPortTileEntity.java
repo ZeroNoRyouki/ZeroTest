@@ -1,6 +1,5 @@
 package it.zerono.mods.zerotest.common.multiblock.mightyfurnace;
 
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import it.zerono.mods.zerocore.api.multiblock.validation.IMultiblockValidator;
 import it.zerono.mods.zerocore.api.multiblock.validation.ValidationError;
@@ -10,7 +9,6 @@ public class MightyFurnaceIOPortTileEntity extends MightyFurnaceTileEntity {
     public MightyFurnaceIOPortTileEntity(boolean isInput) {
 
         this._isInput = isInput;
-        this._inventory = null;
     }
 
     public MightyFurnaceIOPortTileEntity() {
@@ -66,7 +64,6 @@ public class MightyFurnaceIOPortTileEntity extends MightyFurnaceTileEntity {
     }
 
     protected boolean _isInput;
-    protected ItemStack _inventory;
 
     private static ValidationError s_invalidPosition = new ValidationError("zerocoretest:api.multiblock.validation.ioport_invalid_position");
 }

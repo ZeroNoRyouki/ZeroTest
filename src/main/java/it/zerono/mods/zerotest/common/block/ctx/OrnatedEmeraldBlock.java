@@ -44,13 +44,11 @@ public class OrnatedEmeraldBlock extends TestBlockBase {
 
     @Override
     public int getMetaFromState(IBlockState state) {
-
         return 0;
     }
 
     @Override
     protected BlockStateContainer createBlockState() {
-
         return new BlockStateContainer(this, PropertyBlockFacings.FACINGS);
     }
 

@@ -185,7 +185,7 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
         this.lookupPorts();
 
-        if (this.WORLD.isRemote)
+        if (WorldHelper.calledByLogicalClient(this.WORLD))
             // on the client, force a render update
             this.markMultiblockForRenderUpdate();
     }
@@ -237,17 +237,32 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
 
     @Override
     protected int getMaximumXSize() {
-        return 3;
+        return MACHINE_SIZE;
     }
 
     @Override
     protected int getMaximumZSize() {
-        return 3;
+        return MACHINE_SIZE;
     }
 
     @Override
     protected int getMaximumYSize() {
-        return 3;
+        return MACHINE_SIZE;
+    }
+
+    @Override
+    protected int getMinimumXSize() {
+        return MACHINE_SIZE;
+    }
+
+    @Override
+    protected int getMinimumYSize() {
+        return MACHINE_SIZE;
+    }
+
+    @Override
+    protected int getMinimumZSize() {
+        return MACHINE_SIZE;
     }
 
     @Override
@@ -297,4 +312,6 @@ public class MightyFurnaceController extends RectangularMultiblockControllerBase
     private MightyFurnaceIOPortTileEntity _outputPort;
     private MightyFurnacePowerTileEntity _powerPort;
     private boolean _active;
+
+    private static final int MACHINE_SIZE = 3;
 }
